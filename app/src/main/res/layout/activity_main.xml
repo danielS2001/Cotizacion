@@ -88,6 +88,12 @@
             android:textStyle="normal"
             android:gravity="center" />
 
+        <Button
+            android:id="@+id/btnCerrar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Cerrar"
+            />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

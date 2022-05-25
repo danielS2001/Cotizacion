@@ -10,10 +10,6 @@ public class Cotizacion {
         private double porcentajePagoInicial;
         private int plazo;
 
-        private double pagoInicial;
-        private double pagoFinal;
-        private double pagoMensual;
-
         //Constructores
         //Constructor vacio
         Cotizacion() {
@@ -112,20 +108,22 @@ public class Cotizacion {
             this.plazo = plazo;
         }
 
-
         //Funciones
         public Double sacarPagoInicial() {
+            double pagoInicial;
             pagoInicial = precio * (porcentajePagoInicial  / 100);
             return pagoInicial;
         }
 
         public Double sacarTotalFinal() {
-            pagoFinal = precio - pagoInicial;
+            double pagoFinal;
+            pagoFinal = precio - sacarPagoInicial();
             return pagoFinal;
         }
 
         public Double sacarPagoMensual() {
-            pagoMensual = pagoFinal / plazo;
+            double pagoMensual;
+            pagoMensual = sacarTotalFinal() / plazo;
             return pagoMensual;
         }
     }
